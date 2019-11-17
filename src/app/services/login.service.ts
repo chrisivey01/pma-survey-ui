@@ -9,7 +9,7 @@ export class LoginService {
   constructor(private httpClient: HttpClient, private route: Router) { }
 
   checkUser(username, password) {
-    this.httpClient.post('http://localhost:8080/login-info', {username, password}, {responseType: 'text'}).subscribe(
+    this.httpClient.post('http://localhost:2020/login-info', {username, password}, {responseType: 'text'}).subscribe(
       data => {
         if ( data === 'Login failed.'){
           this.warning = 'Invalid ID/Password.';
