@@ -1,0 +1,18 @@
+
+<div class="main-data">
+  <div>
+    <button type="button" class="btn btn-dark" [routerLink]="['']">Go Back</button>
+  </div>
+  <div>
+      <button type="button" class="btn btn-warning" (click)="delete()">Delete</button>
+
+  </div>
+  <ul>
+    <li *ngFor="let item of data; let i = index" [ngClass]="i % 2 === 1 ? 'background-dark' : 'background-light'">
+          <div style="display:flex">
+            <input id={{i}} type="checkbox" (click)="modifyData(i)"/>
+            <label for={{i}}>{{item.description}}</label>
+          </div>
+    </li>
+  </ul>
+</div>

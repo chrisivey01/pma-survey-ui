@@ -1,0 +1,12 @@
+<div class="container">
+  {{warning}}
+  <div>
+    <label>Username</label>
+    <input [ngModel]="username" (ngModelChange)="username = $event"/>
+  </div>
+  <div>
+    <label>Password</label>
+    <input [ngModel]="password" (ngModelChange)="password = $event" type="password" required/>
+  </div>
+  <button (click)="attemptLogin()">Login</button>
+</div>

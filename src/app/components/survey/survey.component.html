@@ -1,0 +1,11 @@
+<div class="app-container">
+  <div class="survey-body">
+    <div>
+      <textarea [ngModel]="information" (ngModelChange)="information = $event" placeholder="Let's hear it..."></textarea>
+    </div>
+    <div>
+      <button class="btn btn-primary"  (click)="postInformation()">Submit</button>
+      <button class="btn btn-warning"  (click)="clearInformation()">Clear</button>
+      <button class="btn btn-danger" [routerLink]="['/login']">Staff Viewing</button>
+    </div>
+</div>
