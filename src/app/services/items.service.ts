@@ -11,11 +11,11 @@ export class ItemsService {
   constructor(private httpClient: HttpClient) { }
 
   putInItem(item) {
-    this.httpClient.post('http://localhost:2020/input-survey', {description: item}).subscribe();
+    this.httpClient.post('http://18.209.63.46:2020/input-survey', {description: item}).subscribe();
   }
 
   getItems() {
-    return this.httpClient.get('http://localhost:2020/show-survey').subscribe(data => {
+    return this.httpClient.get('http://18.209.63.46:2020/show-survey').subscribe(data => {
       this.data = data;
       this.dataLoaded.next();
     },
@@ -25,6 +25,6 @@ export class ItemsService {
   }
 
   deleteItems(list) {
-    return this.httpClient.post('http://localhost:2020/delete-survey', list).subscribe();
+    return this.httpClient.post('http://18.209.63.46:2020/delete-survey', list).subscribe();
   }
 }
