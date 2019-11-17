@@ -10,6 +10,7 @@ export class SurveyComponent implements OnInit {
 
   information;
   listOfInformation;
+  submission;
 
   constructor(private itemsService: ItemsService) { }
 
@@ -18,10 +19,14 @@ export class SurveyComponent implements OnInit {
 
   postInformation() {
     this.itemsService.putInItem(this.information);
+    this.information = '';
+    this.submission = 'Submitted, thanks for your feedback!';
   }
 
   clearInformation() {
     this.information = '';
+    this.submission = 'Post cleared!';
+
   }
 
 }
