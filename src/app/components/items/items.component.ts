@@ -33,5 +33,11 @@ export class ItemsComponent implements OnInit {
 
   delete() {
     this.itemsService.deleteItems(this.deleteList);
+
+    this.deleteList.forEach(deletedItems => {
+      if (this.data.indexOf(deletedItems) !== -1) {
+        this.data.splice([this.data.indexOf(deletedItems)]);
+      }
+    });
   }
 }
